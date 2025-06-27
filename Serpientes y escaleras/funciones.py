@@ -78,18 +78,17 @@ def aplicar_efecto_casilla(posicion: int) -> int:
     """Aplica el efecto de la casilla actual según el tablero."""
     casilla = tablero[posicion]
     nueva_posicion = posicion
-    
     if "escalera" in casilla:
-        cantidad = int(casilla.split()[-1])
+        cantidad = int(casilla[-1])
         print(f"¡Escalera! Avanzas {cantidad} casillas extra.")
         nueva_posicion = avanzar(posicion, cantidad)
     elif "serpiente" in casilla:
-        cantidad = int(casilla.split()[-1])
+        cantidad = int(casilla[-1])
         print(f"¡Serpiente! Retrocedes {cantidad} casillas extra.")
         nueva_posicion = retroceder(posicion, cantidad)
     
     return nueva_posicion
-
+    
 def iniciar_juego() -> str:
     """Inicia el juego solicitando el nombre y confirmación del jugador."""
     nombre = pedir_nombre()
