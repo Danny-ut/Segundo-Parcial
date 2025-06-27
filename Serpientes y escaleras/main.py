@@ -12,10 +12,7 @@ def jugar():
 
     while True:
         pregunta = obtener_pregunta(preguntas)
-        if not pregunta:
-            print("No se pudo obtener una pregunta.")
-            break
-
+        
         mostrar_pregunta(pregunta)
 
         if validar_respuesta(pregunta):
@@ -25,7 +22,7 @@ def jugar():
             print("Incorrecto. Retrocedes una casilla.")
             posicion = retroceder(posicion)
 
-        posicion = aplicar_efecto_casilla(posicion)
+        posicion = aplicar_efecto_casilla(posicion)  
 
         if verificar_fin_juego(posicion):
             break

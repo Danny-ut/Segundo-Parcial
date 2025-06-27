@@ -48,7 +48,7 @@ def confirmar_si(mensaje: str) -> bool:
 
 def mostrar_tablero(pos: int) -> None:
     """Muestra la posición actual del jugador."""
-    print(f"\nPosición actual del jugador: {pos} - {tablero[pos]}")
+    print(f"\nPosición actual del jugador: {pos}")
 
 def obtener_pregunta(preguntas: list[dict]) -> dict:
     """Devuelve una pregunta aleatoria del conjunto dado."""
@@ -117,5 +117,8 @@ def guardar_puntaje(nombre, posicion) -> None:
         writer = csv.writer(archivo)
         writer.writerow([nombre, posicion])
     return 
+
+
+
 
 
